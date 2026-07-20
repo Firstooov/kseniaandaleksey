@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Алексей ❤ Ксения — Год вместе</title>
+<meta name="description" content="Наша история любви — годовщина Алексея и Ксении">
+<meta property="og:title" content="Алексей ❤ Ксения — Год вместе">
+<meta property="og:description" content="Каждая история любви начинается с одного взгляда. Наша продолжается уже целый год.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="preloader" aria-hidden="true">
+  <div class="preloader-heart">❤</div>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#hero" class="logo">А<span class="logo-heart">❤</span>К</a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#stats" class="nav-link">Статистика</a>
+      <a href="#gallery" class="nav-link">Галерея</a>
+      <a href="#timeline" class="nav-link">История</a>
+      <a href="#video" class="nav-link">Видео</a>
+      <a href="#letter" class="nav-link">Письмо</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="music-toggle" id="musicToggle" aria-label="Включить музыку" aria-pressed="false">
+        <span class="music-icon">♪</span>
+      </button>
+      <button class="nav-burger" id="navBurger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="assets/photos/hero.jpg" alt="Алексей и Ксения" class="hero-photo" data-fallback-name="hero.jpg">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow reveal">С любовью, с 24 июля 2025</p>
+      <h1 class="hero-title reveal">Алексей <span class="hero-heart">❤</span> Ксения</h1>
+      <p class="hero-subtitle reveal">Каждая история любви начинается с одного взгляда.<br>Наша продолжается уже целый год.</p>
+
+      <div class="hero-counter reveal" id="liveCounter" data-start="2025-07-24T00:00:00">
+        <div class="counter-row">
+          <div class="counter-block"><span class="counter-num" id="cDays">0</span><span class="counter-unit">дней</span></div>
+          <div class="counter-block"><span class="counter-num" id="cHours">00</span><span class="counter-unit">часов</span></div>
+          <div class="counter-block"><span class="counter-num" id="cMins">00</span><span class="counter-unit">минут</span></div>
+          <div class="counter-block"><span class="counter-num" id="cSecs">00</span><span class="counter-unit">секунд</span></div>
+        </div>
+        <p class="counter-caption">вместе — и это только начало</p>
+      </div>
+    </div>
+    <button class="scroll-down" id="scrollDown" aria-label="Прокрутить вниз"><span></span></button>
+  </section>
+
+  <section class="stats" id="stats">
+    <div class="section-inner">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-10-9.3C.3 8 1.7 4.5 5 3.4 7.4 2.6 9.8 3.6 12 6.3 14.2 3.6 16.6 2.6 19 3.4c3.3 1.1 4.7 4.6 3 8.3C19.5 16.3 12 21 12 21z"/></svg>
+          </div>
+          <div class="stat-number" id="statDays" data-live="days">0</div>
+          <div class="stat-label">Дней вместе</div>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="14" r="3.3" fill="none" stroke-width="1.4"/></svg>
+          </div>
+          <div class="stat-number" id="statPhotos" data-count-target="0">0</div>
+          <div class="stat-label">Общих фото</div>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
+          </div>
+          <div class="stat-number" id="statMoments" data-count-target="0">0</div>
+          <div class="stat-label">Ярких моментов</div>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 3c3 0 6 3 6 3s3-3 6-3 6 3 6 6-3 6-3 6-6 6-9 9c-3-3-9-9-9-9S0 12 0 9s3-6 6-6z" transform="scale(0.85) translate(2,2)"/></svg>
+          </div>
+          <div class="stat-number-static">∞</div>
+          <div class="stat-label">Объятий</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="section-inner">
+      <p class="eyebrow reveal">Моменты, которые мы любим</p>
+      <h2 class="section-title reveal">Фотогалерея</h2>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <figure class="gallery-item reveal">
+          <img src="assets/photos/gallery-1.jpg" alt="Мы вдвоём" data-fallback-name="gallery-1.jpg">
+          <figcaption>Тепло</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/photos/gallery-2.jpg" alt="Мы вдвоём" data-fallback-name="gallery-2.jpg">
+          <figcaption>Смех</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/photos/gallery-3.jpg" alt="Мы вдвоём" data-fallback-name="gallery-3.jpg">
+          <figcaption>Нежность</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/photos/gallery-4.jpg" alt="Мы вдвоём" data-fallback-name="gallery-4.jpg">
+          <figcaption>Вечер</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/photos/gallery-5.jpg" alt="Мы вдвоём" data-fallback-name="gallery-5.jpg">
+          <figcaption>Дорога</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/photos/gallery-6.jpg" alt="Мы вдвоём" data-fallback-name="gallery-6.jpg">
+          <figcaption>Праздник</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/photos/gallery-7.jpg" alt="Мы вдвоём" data-fallback-name="gallery-7.jpg">
+          <figcaption>Улыбка</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="assets/photos/gallery-8.jpg" alt="Мы вдвоём" data-fallback-name="gallery-8.jpg">
+          <figcaption>Мы</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline" id="timeline">
+    <div class="section-inner">
+      <p class="eyebrow reveal">Шаг за шагом</p>
+      <h2 class="section-title reveal">Наша история</h2>
+
+      <div class="timeline-track" id="timelineTrack">
+        <div class="timeline-line" id="timelineLine"></div>
+
+        <div class="timeline-item reveal" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <img src="assets/photos/timeline-1.jpg" alt="Начало истории" data-fallback-name="timeline-1.jpg">
+            <span class="timeline-date">24 июля 2025</span>
+            <h3>Всё началось</h3>
+            <p>Тот самый день, с которого мы считаем — начало нашей истории.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-side="right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <img src="assets/photos/timeline-2.jpg" alt="Первые месяцы" data-fallback-name="timeline-2.jpg">
+            <span class="timeline-date">Осень 2025</span>
+            <h3>Первые открытия</h3>
+            <p>Узнавали друг друга — и с каждым днём становилось только теплее.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <img src="assets/photos/timeline-3.jpg" alt="Особенный вечер" data-fallback-name="timeline-3.jpg">
+            <span class="timeline-date">Февраль 2026</span>
+            <h3>Особенный вечер</h3>
+            <p>Один из тех вечеров, которые хочется пережить снова и снова.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-side="right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <img src="assets/photos/timeline-4.jpg" alt="Момент, который запомнится" data-fallback-name="timeline-4.jpg">
+            <span class="timeline-date">Май 2026</span>
+            <h3>Момент, который запомнится</h3>
+            <p>День, о котором будем рассказывать ещё много лет.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <img src="assets/photos/timeline-5.jpg" alt="Год вместе" data-fallback-name="timeline-5.jpg">
+            <span class="timeline-date">24 июля 2026</span>
+            <h3>Год вместе</h3>
+            <p>Это только начало — впереди ещё столько всего.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="section-inner">
+      <blockquote class="quote-text reveal">«Самое красивое место в мире — рядом с тобой»</blockquote>
+    </div>
+  </section>
+
+  <section class="video" id="video">
+    <div class="section-inner">
+      <p class="eyebrow reveal">Наш фильм</p>
+      <h2 class="section-title reveal">Моменты счастья</h2>
+
+      <div class="video-frame reveal" id="videoFrame">
+        <video id="mainVideo" controls preload="none" poster="assets/photos/video-poster.jpg" playsinline>
+          <source src="assets/video/video.mp4" type="video/mp4">
+        </video>
+        <div class="video-placeholder" id="videoPlaceholder">
+          <div class="placeholder-icon">▶</div>
+          <p>Добавьте видео:<br><code>assets/video/video.mp4</code></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="letter" id="letter">
+    <div class="section-inner letter-inner">
+      <div class="letter-teaser reveal">
+        <p class="eyebrow">Письмо тебе</p>
+        <h2 class="section-title">Спасибо, что ты есть</h2>
+        <p class="letter-hint">Немного слов, которые хотелось сказать вслух.</p>
+        <button class="btn-gold" id="openLetterBtn">Прочитать письмо</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-line">Это только начало <span class="gold-italic">нашей истории</span></p>
+    <div class="footer-meta">
+      <span>24.07.2025 — ∞</span>
+      <span class="footer-heart">❤</span>
+      <span>Алексей &amp; Ксения</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Наверх">↑</button>
+
+<!-- Letter modal -->
+<div class="letter-modal" id="letterModal" aria-hidden="true">
+  <div class="letter-modal-backdrop" id="letterBackdrop"></div>
+  <div class="letter-paper">
+    <button class="letter-close" id="letterClose" aria-label="Закрыть">×</button>
+    <p class="letter-paper-date">24 июля 2026</p>
+    <div class="letter-text">
+      <p>Моя Ксюша,</p>
+      <p>Ровно год назад началась история, которую я не хочу заканчивать никогда. Год — это много дней, а с тобой они пролетели так, будто прошла всего одна счастливая неделя.</p>
+      <p>Спасибо за твою поддержку, за смех по вечерам, за то, что рядом с тобой я чувствую себя дома, где бы мы ни были. Спасибо, что ты — ты: настоящая, тёплая, живая.</p>
+      <p>Я люблю тебя больше, чем умею показать словами. И этот год — только начало.</p>
+      <p class="letter-signature">Твой Алексей</p>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть">×</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Предыдущее фото">‹</button>
+  <img src="" alt="" id="lightboxImg">
+  <button class="lightbox-next" id="lightboxNext" aria-label="Следующее фото">›</button>
+</div>
+
+<audio id="bgMusic" loop preload="none">
+  <source src="assets/music/song.mp3" type="audio/mpeg">
+</audio>
+
+<script src="js/main.js"></script>
+</body>
+</html>
