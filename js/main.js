@@ -131,47 +131,19 @@ document.addEventListener('DOMContentLoaded', () => {
   tickCounter();
   setInterval(tickCounter, 1000);
 
-  /* ---------- Auto stat counts from actual content ---------- */
-  const photoCount = document.querySelectorAll('.gallery-item').length;
-  const momentCount = document.querySelectorAll('.timeline-item').length;
-  const statPhotos = document.getElementById('statPhotos');
-  const statMoments = document.getElementById('statMoments');
-  if (statPhotos) statPhotos.dataset.countTarget = photoCount;
-  if (statMoments) statMoments.dataset.countTarget = momentCount;
-
   /* ---------- Scroll reveal (IntersectionObserver) ---------- */
   const revealEls = document.querySelectorAll('.reveal');
-  const countUpEls = document.querySelectorAll('[data-count-target]');
-  const countedUp = new WeakSet();
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in-view');
-        if (entry.target.hasAttribute('data-count-target') && !countedUp.has(entry.target)) {
-          countedUp.add(entry.target);
-          animateCount(entry.target);
-        }
         io.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
 
   revealEls.forEach(el => io.observe(el));
-  countUpEls.forEach(el => io.observe(el));
-
-  function animateCount(el) {
-    const target = parseInt(el.dataset.countTarget, 10) || 0;
-    const duration = 1100;
-    const start = performance.now();
-    function step(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
 
   /* ---------- Timeline line growth ---------- */
   const timelineTrack = document.getElementById('timelineTrack');
@@ -189,8 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTimelineLine();
   }
 
-  /* ---------- Gallery lightbox ---------- */
-  const galleryImgs = Array.from(document.querySelectorAll('.gallery-item img'));
+  /* ---------- Lightbox (gallery + timeline photos) ---------- */
+  const galleryImgs = Array.from(document.querySelectorAll('.gallery-item img, .timeline-card img'));
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   let currentIndex = 0;
@@ -220,7 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   galleryImgs.forEach((img, i) => {
-    img.closest('.gallery-item').addEventListener('click', () => openLightbox(i));
+    const trigger = img.closest('.gallery-item') || img.closest('.timeline-photo') || img;
+    trigger.addEventListener('click', () => openLightbox(i));
   });
   document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
   document.getElementById('lightboxPrev').addEventListener('click', () => showRelative(-1));
